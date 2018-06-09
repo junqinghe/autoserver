@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tablede{
+            position: absolute;
+            width: 800px;
+            height: 500px;
+
+            left: 100px;
+        }
+    </style>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="tablede">
+        <h1>服务器列表</h1>
+        <div class="btn-group" role="group" aria-label="...">
+          <button id='checkall' type="button" class="btn btn-default">全选</button>
+          <button id='checkareverse' type="button" class="btn btn-default">反选</button>
+          <button id='checkcancle' type="button" class="btn btn-default">取消</button>
+          <a class="btn btn-default">添加</a>
+          <button id='INoutEdit' type="button" class="btn btn-default">进入编辑模式</button>
+          <button id='checkSave' type="button" class="btn btn-default">保存</button>
+          <button id='checkDelete' type="button" class="btn btn-default">删除</button>
+    </div>
+        <table class="table table-striped table-bordered">
+            <thead id="table_head">
+                <tr>
+                </tr>
+            </thead>
+            <tbody id="table_body">
+
+            </tbody>
+    </table>
+    </div>
+<script rel="stylesheet" src="/static/jquery-3.2.1.js"></script>
+<script src="/static/nb_list.js"></script>
+<script>
+    $.nb_list('/backend/asset.html')
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <div id="id1" ></div>
+{#    <script src="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css"></script>#}
+    <script src="https://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+    <script src="https://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+
+<script>
+    Highcharts.setOptions({
+		global:{
+			useUTC:false
+			}
+	});
+    var chart=new Highcharts.Chart('id1',{
+		title:{
+			text:'不同城市的平均气温',
+			x:0
+		},
+        subtitle:{
+			text:'数据来源',
+			x:0
+		},
+        chart:{
+			event:{
+				load:function(e){
+					//图标加载时，执行的函数
+					}
+					}
+		},
+        credits:{
+			enable:true,
+			position:{
+				align:'right',
+				varticalAlign:'bottom'},
+			'text':'老男孩',
+			'href':'http://www.oldboyedu.com'
+		},
+        legend:{
+		    layout:'vertical',
+            align:'right',
+            varticalAlign:'middle',
+            borderWidth:1
+        },
+        tooltip:{
+            pointFormatter:function (e) {
+                var tpl='<span style="color:'+this.series.color+'">哦哦哦</span>'+this.series.name+':<b>'+this.y+'</b><br/>';
+                return tpl
+            },
+            useHtml:true
+        },
+        plotOptions:{
+		    series:{
+		        cursor:'pointer',
+                events:{
+		            click:function (event) {
+                        console.log(this.name,event.point.x,event.point.y)
+                    }
+                }
+            }
+        },
+        xAxis:{
+{#		    categories:['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月' ]#}
+            type:'datetime',
+                labels:{
+                    formatter:function () {
+                        return Highcharts.dateFormat('%Y-%m-%d %H:%M:%S',this.value)
+                    },
+                    rotation:30
+                }
+        },
+        yAxis:{
+		    title:{
+		        text:'数值'
+            }
+        },
+        series:[{
+		    name:'湖北',
+{#            data:[7.0,3.4,3,4,6.2,9,8,4,7,2]#}
+            date:[[150123031829.263,8],[150123031829.263,5],[150123131829.263,8],[150123031229.263,9],[150123038229.263,7]]
+        },
+            {
+            name:'湖南',
+{#            data:[4.0,3.4,6,4,8.2,7,8,4,9]#}
+            date:[[150123031829.263,4],[150123031829.263,8],[150123131829.263,9],[150123031229.263,6],[150123038229.263,3]]
+            }]
+
+
+
+
+
+
+        })
+</script>
+
+</body>
+</html>

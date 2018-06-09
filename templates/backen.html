@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理页面</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #tophead {
+            position: relative;
+            background-color: cadetblue;
+
+        }
+        #tophead #lefttitle{
+            color: white;
+{#            background-color: cadetblue;#}
+            font-size: 30px;
+        }
+        #tophead #rightchoose {
+            height: 70px;
+            line-height: 70px;
+            font-size: 30px;
+        }
+        #tophead #rightchoose i{
+            line-height: 70px;
+            font-size: 25px;
+        }
+        #leftbody{
+            position: relative;
+            left: 0;
+            width:200px;
+            height:600px;
+            background-color:#b9def0;
+            color: #3c3c3c;
+            border-top: 1px solid mediumslateblue;
+        }
+         #leftbody li{
+             font-size: 25px;
+             padding-left: 35px;
+             padding-top: 20px;
+         }
+        #rightbody{
+            height:600px;
+            border-left: 1px solid darkgray;
+        }
+        #listchoose{
+            position: relative;
+            left: 30px;
+        }
+        {% block css %}{% endblock %}
+    </style>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="tophead" class="row">
+        <div id="lefttitle" class="col-md-4"><h2>&nbsp;&nbsp;&nbsp;后台管理系统 <small></small></h2></div>
+        <div class="col-md-3"></div>
+        <div id="rightchoose" class="col-md-4"><i class="fa fa-envelope-open col-md-4" aria-hidden="true">邮件</i>
+        <i class="fa fa-user-circle col-md-4" aria-hidden="true">用户</i>
+        <i class="fa fa-bell" aria-hidden="true"></i>信息</div>
+    </div>
+<div id="leftbody" class="col-md-4">
+    <ul class="list-unstyled">
+        <li><span>用户管理</span></li>
+        <li><span>资产管理</span></li>
+        <li><span>信息维护</span></li>
+        <li><span>权限管理</span></li>
+        <li><span>部门权限</span></li>
+        <li><span>帮助热线</span></li>
+</ul>
+</div>
+<div id="rightbody" class="col-md-8 col-lg-8">
+<div id="listchoose">
+    {% block center %}{% endblock %}
+</div>
+
+</div>
+    {% block js %}{% endblock %}
+</body>
+</html>
